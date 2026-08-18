@@ -7,14 +7,14 @@ import pandas as pd
 
 def get_title(soup):
     try:
-        product_title = single_product_soup.find('span', attrs={'id': 'productTitle'}).text.strip()
+        product_title = soup.find('span', attrs={'id': 'productTitle'}).text.strip()
     except:
         product_title = ""
     return product_title
 
 def get_price(soup):
     try:
-        product_price = single_product_soup.find('span', attrs={'class': 'a-offscreen'}).text.strip()
+        product_price = soup.find('span', attrs={'class': 'a-offscreen'}).text.strip()
     except:
         product_price = ""
     return product_price
@@ -50,7 +50,12 @@ links_list = []
 
 #loop to extract link
 for link in links:
-    links_list.append("https://www.amazon.com"+link.get('href'))
+    href = link.get('href')
+    if href:
+        if href.startswith("http"):
+            links_list.append(href)
+        else:
+            links_list.append("https://www.amazon.com"+href)
 
 
 
@@ -62,6 +67,7 @@ for link in links_list:
 
     d["Title"].append(get_title(single_product_soup))
     d["Price"].append(get_price(single_product_soup))
+
 
 amazon_data_fram = pd.DataFrame.from_dict(d)
 amazon_data_fram['Title'].replace('',np.nan,inplace=True)
