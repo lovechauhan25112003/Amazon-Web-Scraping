@@ -1,17 +1,13 @@
 # Amazon Product Web Scraping using Python
 
-## 📌 Project Overview
-
+ Project Overview:
 This project is a Python-based web scraping application that extracts product information from Amazon search results.
-
 The scraper collects product titles and prices from individual product pages and stores the extracted data in a structured CSV file.
 
-## 🎯 Objective
-
+Objective:
 The main objective of this project is to automate the process of collecting product information from Amazon using Python.
 
 The project demonstrates practical implementation of:
-
 * Web Scraping
 * HTML Parsing
 * HTTP Requests
@@ -19,8 +15,7 @@ The project demonstrates practical implementation of:
 * Data Cleaning
 * Data Storage
 
-## 🛠️ Technologies Used
-
+## 🛠️ Technologies Used:
 * **Python**
 * **Requests** – To send HTTP requests and fetch web pages
 * **BeautifulSoup4** – To parse HTML and extract required information
@@ -29,7 +24,6 @@ The project demonstrates practical implementation of:
 * **CSV** – To store the final scraped data
 
 ## 📊 Data Extracted
-
 The project extracts the following information:
 
  Field          Description                     
@@ -37,9 +31,8 @@ The project extracts the following information:
  Product Title  Name/title of the product       
  Product Price  Current displayed product price 
 
-## 🔄 Project Workflow
-
-```text
+## 🔄 Project Workflow:
+```
 Amazon Search Page
         ↓
 Send HTTP Request using Requests
@@ -64,19 +57,15 @@ Export Data to CSV
 ## 🔧 Main Features
 
 ### 1. HTTP Request
-
 The `Requests` library is used to send HTTP requests to the Amazon website.
 
 ### 2. HTML Parsing
-
 BeautifulSoup is used to parse the HTML response and locate required HTML elements.
 
 ### 3. Product Link Extraction
-
 The scraper identifies product links from the Amazon search results page and visits each product page.
 
 ### 4. Product Information Extraction
-
 The scraper extracts:
 
 * Product Title
@@ -94,7 +83,7 @@ The final cleaned dataset is exported as:
 `Amazon_Data.csv`
 
 ## 📁 Project Structure
-```text
+```
 Amazon-Web-Scraping/
 │
 ── amazon_scraper.py
